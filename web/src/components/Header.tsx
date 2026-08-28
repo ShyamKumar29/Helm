@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Bell, ChevronDown, Pause, Play, RotateCcw, SkipForward } from 'lucide-react';
+import { Bell, ChevronDown, Compass, Pause, Play, RotateCcw, SkipForward } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import type { AgentStatus } from '../types';
@@ -130,12 +130,21 @@ export function Header({
         <motion.span
           whileHover={{ rotate: 25 }}
           transition={{ type: 'spring', stiffness: 300, damping: 18 }}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-accent-dim text-accent"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-accent-dim bg-accent-dim/30 text-accent"
         >
-          <HelmWheel size={17} />
+          {/* A real Lucide glyph reads cleanly at 32px; the hand-drawn HelmWheel (still used
+              as the RE-OPTIMIZING spinner in StatusPill below, where it's a motion cue rather
+              than a logo) was designed down to an 11px status pill and got muddy blown back
+              up here. Compass keeps the same nautical "steering the company" motif — it's the
+              same watermark already used on the fan chart and Replay's hero panel. */}
+          <Compass size={17} strokeWidth={2} />
         </motion.span>
-        <span className="font-mono text-base font-semibold uppercase tracking-[0.2em] text-text-primary">
-          Helm
+        {/* Brand wordmark gets its own font — Fraunces, the same serif already used for
+            narrative text — instead of the mono font every number on this dashboard uses.
+            A distinct display face for the name vs. a functional face for data is what
+            actually reads as "designed" rather than "the same font stretched wide". */}
+        <span className="font-serif text-xl font-semibold tracking-tight text-text-primary">
+          HELM
         </span>
         <StatusPill status={status} />
         <span className="font-mono text-sm tabular-nums text-text-secondary">

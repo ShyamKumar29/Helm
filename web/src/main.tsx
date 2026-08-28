@@ -10,6 +10,7 @@ import '@fontsource/geist-mono/500.css'
 import '@fontsource/geist-mono/600.css'
 import '@fontsource/fraunces/500-italic.css'
 import '@fontsource/fraunces/600-italic.css'
+import '@fontsource/fraunces/600.css'
 import './index.css'
 import App from './App.tsx'
 
