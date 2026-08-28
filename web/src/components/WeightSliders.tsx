@@ -31,7 +31,7 @@ export function WeightSliders({ initial, onCommit }: WeightSlidersProps) {
     <div className="flex flex-col gap-4">
       <p className="text-xs text-text-secondary">
         Adjusts how the optimizer trades these off against each other. Applies on release, not
-        while dragging — no live re-solve wired up yet, so this is display-only for now.
+        while dragging — POST /weights re-solves immediately and the decision queue updates.
       </p>
       <div className="grid grid-cols-1 gap-x-8 gap-y-3.5 sm:grid-cols-2 lg:grid-cols-5">
         {(Object.keys(LABELS) as (keyof ObjectiveWeights)[]).map((key) => (

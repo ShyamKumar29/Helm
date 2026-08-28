@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { getDecisionHistory, getState } from '../api/client';
+import { getDecisionHistory, USE_MOCK } from '../api/client';
 import { AmbientBackground } from '../components/AmbientBackground';
 import { EmptyState } from '../components/EmptyState';
 import { Header } from '../components/Header';
+import { useSimData } from '../state/SimDataProvider';
 import type { DecisionObject, State } from '../types';
 import { inr, simDate } from '../utils/format';
 import { fadeUp, staggerContainer } from '../utils/motion';
@@ -76,11 +77,21 @@ function DecisionCard({ decision, state }: { decision: DecisionObject; state: St
 }
 
 export function HistoryPage() {
-  const [state, setState] = useState<State | null>(null);
+  // `state` (and the sim controls) come from the shared provider mounted in App.tsx — no
+  // separate GET /state here, so this page opens instantly off whatever the Live tab already
+  // loaded instead of re-fetching and flashing empty every visit.
+  const {
+    state,
+    agentStatus,
+    simRunning,
+    controlsBusy,
+    handleStep,
+    handlePlayPause,
+    handleReset,
+  } = useSimData();
   const [decisions, setDecisions] = useState<DecisionObject[] | null>(null);
 
   useEffect(() => {
-    getState().then(setState);
     getDecisionHistory().then(setDecisions);
   }, []);
 
@@ -89,7 +100,16 @@ export function HistoryPage() {
   return (
     <div className="relative flex min-h-screen flex-col bg-page">
       <AmbientBackground />
-      <Header status="RUNNING" simDay={state?.sim_day ?? 0} asOf={state?.as_of ?? ''} />
+      <Header
+        status={agentStatus}
+        simDay={state?.sim_day ?? 0}
+        asOf={state?.as_of ?? ''}
+        onStep={USE_MOCK ? undefined : handleStep}
+        onPlayPause={USE_MOCK ? undefined : handlePlayPause}
+        onReset={USE_MOCK ? undefined : handleReset}
+        simRunning={simRunning}
+        controlsBusy={controlsBusy}
+      />
 
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 p-6">
         <div>
