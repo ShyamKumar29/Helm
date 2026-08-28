@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import { Compass, ShieldCheck, TrendingUp } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { getState } from '../api/client';
+import { USE_MOCK } from '../api/client';
 import { AmbientBackground } from '../components/AmbientBackground';
 import { Header } from '../components/Header';
 import { HelmWheel } from '../components/icons/HelmWheel';
-import type { State } from '../types';
+import { useSimData } from '../state/SimDataProvider';
 import { fadeUp, staggerContainer } from '../utils/motion';
 
 const STAGES = [
@@ -35,16 +34,22 @@ const RULES = [
 ];
 
 export function AboutPage() {
-  const [state, setState] = useState<State | null>(null);
-
-  useEffect(() => {
-    getState().then(setState);
-  }, []);
+  const { state, agentStatus, simRunning, controlsBusy, handleStep, handlePlayPause, handleReset } =
+    useSimData();
 
   return (
     <div className="relative flex min-h-screen flex-col bg-page">
       <AmbientBackground />
-      <Header status="RUNNING" simDay={state?.sim_day ?? 0} asOf={state?.as_of ?? ''} />
+      <Header
+        status={agentStatus}
+        simDay={state?.sim_day ?? 0}
+        asOf={state?.as_of ?? ''}
+        onStep={USE_MOCK ? undefined : handleStep}
+        onPlayPause={USE_MOCK ? undefined : handlePlayPause}
+        onReset={USE_MOCK ? undefined : handleReset}
+        simRunning={simRunning}
+        controlsBusy={controlsBusy}
+      />
 
       <motion.main
         variants={staggerContainer}

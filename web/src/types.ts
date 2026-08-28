@@ -18,7 +18,10 @@ export interface Customer {
   historical_delays: number[];
 }
 
-export type InvoiceStatus = 'OPEN' | 'PAID' | 'DELAYED';
+// Matches contracts/enums.py InvoiceStatus exactly — SCHEDULED and FINANCED are real states
+// the backend emits (FINANCE_BANK/FINANCE_SUPPLIER actions set FINANCED); there is no
+// DELAYED invoice status — a late payment is the DELAY *action*, not a status.
+export type InvoiceStatus = 'OPEN' | 'SCHEDULED' | 'PAID' | 'FINANCED';
 
 export interface Invoice {
   id: string;
@@ -27,7 +30,7 @@ export interface Invoice {
   issue_date: string;
   due_date: string;
   discount_pct: number;
-  discount_until: string;
+  discount_until: string | null;
   penalty_bps_per_day: number;
   max_delay_days: number;
   status: InvoiceStatus;
@@ -38,7 +41,7 @@ export interface Receivable {
   customer_id: string;
   amount: number;
   expected_date: string;
-  status: 'OPEN' | 'COLLECTED';
+  status: 'OPEN' | 'COLLECTED' | 'WRITTEN_OFF';
 }
 
 export interface Obligation {
@@ -215,9 +218,21 @@ export interface HelmEvent {
   type: string;
   source: string;
   payload: Record<string, unknown>;
-  materiality_score: number;
+  // FINAL.md §12-API-CONTRACT-CHECKLIST §2: "materiality_score may be null for system
+  // events, but the key is always present." The real backend leaves it null on every
+  // SIM-sourced event it doesn't separately score (DAY_ADVANCED, RECEIVABLE_COLLECTED,
+  // INVOICE_PAID) — render a placeholder, never call .toFixed() on this unguarded.
+  materiality_score: number | null;
   triggered_reoptimization: boolean;
   triggered_decision_id: string | null;
+}
+
+// POST /events response shape (FINAL.md §10 "Act" table): confirms the event landed and,
+// if it was material, the AGENT decision it triggered — null when it wasn't material enough
+// to re-optimize.
+export interface EventInjectResponse {
+  event: HelmEvent;
+  decision: DecisionObject | null;
 }
 
 export interface PolicyMetrics {
@@ -249,3 +264,57 @@ export interface ComparisonMetrics {
 }
 
 export type AgentStatus = 'RUNNING' | 'RE-OPTIMIZING';
+
+// Simulation control responses (FINAL.md §10 "Simulation control" table). Not full
+// contract types (State/Forecast/DecisionObject/...) — these are the small ack shapes the
+// control endpoints themselves return.
+export interface SimResetResponse {
+  sim_day: number;
+  as_of: string;
+}
+
+export interface SimStepResponse {
+  sim_day: number;
+  events: HelmEvent[];
+  decisions: DecisionObject[];
+}
+
+// The real backend's 202 body (api/routers/sim.py) — not itself part of the frozen
+// contract, which only specifies the 202 status and that the replay streams over WS.
+export interface SimPlayResponse {
+  accepted: boolean;
+  days: number;
+  speed_ms: number;
+}
+
+export interface SimPauseResponse {
+  sim_day: number;
+  paused: boolean;
+}
+
+export interface SimStatus {
+  sim_day: number;
+  as_of: string;
+  running: boolean;
+  horizon_days: number;
+}
+
+export interface WeightsResponse {
+  weights: ObjectiveWeights;
+  decision: DecisionObject;
+}
+
+// WS /api/stream frame envelope — frozen (FINAL.md §10 "WebSocket"): exactly these three
+// top-level keys, `data`'s shape keyed off `channel`.
+export type StreamChannel = 'event' | 'decision' | 'metrics' | 'forecast' | 'sim' | 'log';
+
+export interface StreamFrame<T = unknown> {
+  channel: StreamChannel;
+  sim_day: number;
+  data: T;
+}
+
+export interface StreamLogData {
+  level: string;
+  text: string;
+}

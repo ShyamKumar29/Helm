@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Bell, ChevronDown, Play, RotateCcw, SkipForward } from 'lucide-react';
+import { Bell, ChevronDown, Pause, Play, RotateCcw, SkipForward } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import type { AgentStatus } from '../types';
@@ -11,6 +11,14 @@ interface HeaderProps {
   status: AgentStatus;
   simDay: number;
   asOf: string;
+  // Sim controls (POST /sim/step, /sim/play, /sim/pause, /sim/reset — FINAL.md §10). All
+  // optional: History/About render a bare Header with no live sim to control, so the buttons
+  // there stay inert rather than requiring three callers to wire dead handlers.
+  onStep?: () => void;
+  onPlayPause?: () => void;
+  onReset?: () => void;
+  simRunning?: boolean;
+  controlsBusy?: boolean;
 }
 
 function StatusPill({ status }: { status: AgentStatus }) {
@@ -52,6 +60,7 @@ function StatusPill({ status }: { status: AgentStatus }) {
 
 const NAV_TABS = [
   { to: '/dashboard', label: 'Live', end: true },
+  { to: '/dashboard/replay', label: 'Replay', end: false },
   { to: '/dashboard/history', label: 'History', end: false },
   { to: '/dashboard/about', label: 'About', end: false },
 ];
@@ -79,21 +88,42 @@ function NavTabs() {
   );
 }
 
-function IconButton({ label, children }: { label: string; children: ReactNode }) {
+function IconButton({
+  label,
+  onClick,
+  disabled,
+  children,
+}: {
+  label: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  children: ReactNode;
+}) {
   return (
     <motion.button
       type="button"
       aria-label={label}
-      whileHover={hoverLift}
-      whileTap={tapPress}
-      className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-text-secondary transition-colors duration-150 hover:border-accent-dim hover:bg-accent-dim/40 hover:text-accent"
+      onClick={onClick}
+      disabled={disabled}
+      whileHover={disabled ? undefined : hoverLift}
+      whileTap={disabled ? undefined : tapPress}
+      className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-text-secondary transition-colors duration-150 hover:border-accent-dim hover:bg-accent-dim/40 hover:text-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-text-secondary"
     >
       {children}
     </motion.button>
   );
 }
 
-export function Header({ status, simDay, asOf }: HeaderProps) {
+export function Header({
+  status,
+  simDay,
+  asOf,
+  onStep,
+  onPlayPause,
+  onReset,
+  simRunning = false,
+  controlsBusy = false,
+}: HeaderProps) {
   return (
     <header className="flex items-center justify-between border-b border-border bg-panel/80 px-6 py-3 backdrop-blur">
       <div className="flex items-center gap-4">
@@ -115,13 +145,29 @@ export function Header({ status, simDay, asOf }: HeaderProps) {
       </div>
 
       <div className="flex items-center gap-2">
-        <IconButton label="Step forward">
+        <IconButton
+          label="Step forward one day"
+          onClick={onStep}
+          disabled={!onStep || controlsBusy || simRunning}
+        >
           <SkipForward size={14} strokeWidth={2} />
         </IconButton>
-        <IconButton label="Play">
-          <Play size={13} strokeWidth={2} fill="currentColor" />
+        <IconButton
+          label={simRunning ? 'Pause' : 'Play'}
+          onClick={onPlayPause}
+          disabled={!onPlayPause || controlsBusy}
+        >
+          {simRunning ? (
+            <Pause size={13} strokeWidth={2} fill="currentColor" />
+          ) : (
+            <Play size={13} strokeWidth={2} fill="currentColor" />
+          )}
         </IconButton>
-        <IconButton label="Reset">
+        <IconButton
+          label="Reset simulation"
+          onClick={onReset}
+          disabled={!onReset || controlsBusy}
+        >
           <RotateCcw size={13} strokeWidth={2} />
         </IconButton>
 

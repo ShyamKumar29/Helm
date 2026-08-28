@@ -27,3 +27,11 @@ export function simDate(dateStr: string): string {
     month: 'short',
   });
 }
+
+// "YYYY-MM-DD" + N days -> "YYYY-MM-DD". No timezones anywhere (FINAL.md §8 conventions) —
+// parse and format as plain UTC calendar dates, never a local-time Date shift.
+export function addDaysIso(dateStr: string, days: number): string {
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}

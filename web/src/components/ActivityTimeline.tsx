@@ -33,7 +33,9 @@ function EntryRow({ event }: { event: HelmEvent }) {
           </span>
         </div>
         <span className="font-mono text-[11px] tabular-nums text-text-muted">
-          materiality {event.materiality_score.toFixed(2)}
+          {event.materiality_score !== null
+            ? `materiality ${event.materiality_score.toFixed(2)}`
+            : 'materiality n/a'}
           {acted ? ' · re-optimized' : ' · below threshold, held course'}
         </span>
       </div>
