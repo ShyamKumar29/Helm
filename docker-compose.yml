@@ -1,0 +1,14 @@
+# docker-compose.yml
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: helm
+      POSTGRES_PASSWORD: helm
+      POSTGRES_DB: helm
+    ports: ["5432:5432"]
+    volumes: ["./postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U helm"]
+      interval: 3s
+      retries: 20
