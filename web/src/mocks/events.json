@@ -1,0 +1,46 @@
+[
+  {
+    "event_id": "EVT-0025",
+    "sim_day": 8,
+    "date": "2026-03-09",
+    "type": "DAY_ADVANCED",
+    "source": "SIM",
+    "payload": {},
+    "materiality_score": 0.0,
+    "triggered_reoptimization": false,
+    "triggered_decision_id": null
+  },
+  {
+    "event_id": "EVT-0027",
+    "sim_day": 9,
+    "date": "2026-03-10",
+    "type": "RECEIVABLE_COLLECTED",
+    "source": "SIM",
+    "payload": { "receivable_id": "RCV-0001", "amount": 1250000.0 },
+    "materiality_score": 0.12,
+    "triggered_reoptimization": false,
+    "triggered_decision_id": null
+  },
+  {
+    "event_id": "EVT-0029",
+    "sim_day": 10,
+    "date": "2026-03-11",
+    "type": "NEW_INVOICE",
+    "source": "SIM",
+    "payload": { "invoice_id": "INV-0012", "amount": 265000.0 },
+    "materiality_score": 0.08,
+    "triggered_reoptimization": false,
+    "triggered_decision_id": null
+  },
+  {
+    "event_id": "EVT-0031",
+    "sim_day": 12,
+    "date": "2026-03-13",
+    "type": "RECEIVABLE_DELAYED",
+    "source": "JUDGE_INJECTED",
+    "payload": { "receivable_id": "RCV-0004", "new_expected_date": "2026-04-03", "delay_days": 21 },
+    "materiality_score": 0.42,
+    "triggered_reoptimization": true,
+    "triggered_decision_id": "DEC-000007"
+  }
+]

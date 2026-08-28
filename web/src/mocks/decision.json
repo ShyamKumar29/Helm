@@ -1,0 +1,154 @@
+{
+  "decision_id": "DEC-000007",
+  "run_at": "2026-03-13",
+  "sim_day": 12,
+  "policy": "AGENT",
+  "trigger": {
+    "type": "EVENT",
+    "event_id": "EVT-0031",
+    "materiality_score": 0.42,
+    "description": "RCV-0004 expected collection date pushed out by 21 days"
+  },
+  "cash_before": 4200000.0,
+  "buffer_required": 2350000.0,
+  "deployable_cash": 1850000.0,
+  "objective_weights": {
+    "discount": 1.0,
+    "financing_cost": 1.0,
+    "penalty": 1.0,
+    "liquidity_risk": 1.5,
+    "supplier_stress": 0.8
+  },
+  "objective_value": 128400.0,
+  "actions": [
+    {
+      "action_id": "ACT-0001",
+      "target_type": "INVOICE",
+      "target_id": "INV-0001",
+      "supplier_id": "SUP-001",
+      "action": "PAY_EARLY_DISCOUNT",
+      "amount": 833000.0,
+      "execute_on": "2026-03-14",
+      "funding_source": "BANK_LINE",
+      "facility_id": "FAC-001",
+      "confidence": 0.86,
+      "score_breakdown": {
+        "discount_captured": 17000.0,
+        "penalty_incurred": 0.0,
+        "financing_cost": 4100.0,
+        "liquidity_risk_cost": 1200.0,
+        "supplier_stress_delta": -0.08,
+        "net_value": 11700.0
+      },
+      "binding_constraints": ["BUFFER_FLOOR"],
+      "primary_reason_code": "CHEAPER_FINANCING",
+      "rejected_alternatives": [
+        {
+          "action": "PAY_AT_MATURITY",
+          "net_value": 0.0,
+          "delta": -11700.0,
+          "reason_code": "DISCOUNT_FORGONE"
+        },
+        {
+          "action": "PAY_NOW",
+          "net_value": -3400.0,
+          "delta": -15100.0,
+          "reason_code": "BUFFER_BREACH"
+        }
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "action_id": "ACT-0002",
+      "target_type": "INVOICE",
+      "target_id": "INV-0007",
+      "supplier_id": "SUP-003",
+      "action": "DELAY",
+      "amount": 410000.0,
+      "execute_on": "2026-03-25",
+      "funding_source": "NONE",
+      "facility_id": null,
+      "confidence": 0.74,
+      "score_breakdown": {
+        "discount_captured": 0.0,
+        "penalty_incurred": 4200.0,
+        "financing_cost": 0.0,
+        "liquidity_risk_cost": 0.0,
+        "supplier_stress_delta": 0.05,
+        "net_value": -4200.0
+      },
+      "binding_constraints": ["BUFFER_FLOOR"],
+      "primary_reason_code": "BUFFER_BREACH",
+      "rejected_alternatives": [
+        {
+          "action": "PAY_NOW",
+          "net_value": -8600.0,
+          "delta": -4400.0,
+          "reason_code": "BUFFER_BREACH"
+        }
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "action_id": "ACT-0003",
+      "target_type": "INVOICE",
+      "target_id": "INV-0012",
+      "supplier_id": "SUP-002",
+      "action": "HOLD",
+      "amount": 265000.0,
+      "execute_on": "2026-03-13",
+      "funding_source": "NONE",
+      "facility_id": null,
+      "confidence": 0.68,
+      "score_breakdown": {
+        "discount_captured": 0.0,
+        "penalty_incurred": 0.0,
+        "financing_cost": 0.0,
+        "liquidity_risk_cost": 0.0,
+        "supplier_stress_delta": 0.0,
+        "net_value": 0.0
+      },
+      "binding_constraints": [],
+      "primary_reason_code": "NO_BETTER_ALTERNATIVE",
+      "rejected_alternatives": [
+        {
+          "action": "PAY_EARLY_DISCOUNT",
+          "net_value": 3200.0,
+          "delta": -3200.0,
+          "reason_code": "INSUFFICIENT_CASH"
+        }
+      ],
+      "status": "PROPOSED"
+    }
+  ],
+  "facility_actions": [
+    {
+      "facility_id": "FAC-001",
+      "action": "DRAW",
+      "amount": 833000.0,
+      "expected_repay_date": "2026-05-13",
+      "interest_cost": 25600.0
+    }
+  ],
+  "solver": {
+    "method": "MILP_SCENARIO",
+    "status": "OPTIMAL",
+    "solve_ms": 740,
+    "n_scenarios": 5,
+    "fallback_used": false
+  },
+  "diff_from_previous": {
+    "previous_decision_id": "DEC-000006",
+    "flipped": [
+      {
+        "target_id": "INV-0007",
+        "from": "PAY_NOW",
+        "to": "DELAY",
+        "reason_code": "BUFFER_BREACH"
+      }
+    ],
+    "added": [],
+    "removed": []
+  },
+  "explanation": null
+}

@@ -1,0 +1,27 @@
+{
+  "decision_id": "DEC-000007",
+  "headline": "Holding cash for payroll, financing the Meenakshi invoice instead",
+  "narrative": "A large receivable from Ashwin Motors moved out by three weeks, which drops fifth-percentile cash below zero around the 31st when payroll of ₹22,00,000 lands. Paying INV-0001 from cash would breach that floor, so the agent drew ₹8,33,000 on the bank line at 13.5% to capture the 2% early-payment discount worth ₹17,000. Borrowing cost ₹4,100 over the discount window, so the trade nets ₹11,700.",
+  "key_assumptions": [
+    "Ashwin Motors collects on the revised date with its historical 8-day mean delay",
+    "Bank line remains available at 13.5% through the repayment window",
+    "Payroll of ₹22,00,000 on 31 March is a hard constraint and cannot slip"
+  ],
+  "tradeoffs": [
+    "Accepted ₹25,600 of interest exposure to preserve ₹8,33,000 of liquidity",
+    "Accepted a ₹4,200 late penalty on INV-0007 rather than breach the liquidity floor"
+  ],
+  "would_change_if": [
+    "If RCV-0004 collects on its original date, INV-0007 returns to PAY_NOW",
+    "If the bank line APR rises above 37%, forgoing the discount becomes cheaper",
+    "If SUP-001 liquidity stress rises above 0.7, the agent pays from cash regardless"
+  ],
+  "generated_by": "template",
+  "grounded_fields": [
+    "cash_before",
+    "buffer_required",
+    "deployable_cash",
+    "actions[0].score_breakdown",
+    "facility_actions[0].interest_cost"
+  ]
+}

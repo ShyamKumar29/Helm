@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: #0a0d10;
+    /* Chart-grid, not dot-grid — the faint ruling of a nautical plotting sheet, not a SaaS dashboard texture. */
+    background-image:
+      linear-gradient(to right, rgba(143, 163, 159, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(143, 163, 159, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-attachment: fixed;
+    color: #ecf2ef;
+    font-family: 'Geist Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(47, 224, 184, 0.25);
+  }
+}
+
+@layer utilities {
+  /* Instrument nameplate: every label on this page is a readout, set in the
+     machine's voice (mono, tracked, quiet) — reserved contrast against it is
+     what makes the narrative serif elsewhere feel like someone speaking. */
+  .label-caps {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8fa39d;
+  }
+
+  .voice-narrative {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
