@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-03-01",
+  "sim_day": 0,
+  "horizon_days": 90,
+  "n_paths": 2000,
+  "risk_alpha": 0.05,
+  "buckets": [
+    {
+      "date": "2026-03-01",
+      "day_offset": 0,
+      "p10": 3980000.0,
+      "p50": 4200000.0,
+      "p90": 4200000.0,
+      "shortfall_prob": 0.0,
+      "committed_outflow": 0.0,
+      "expected_inflow": 0.0
+    },
+    {
+      "date": "2026-03-31",
+      "day_offset": 30,
+      "p10": -180000.0,
+      "p50": 1420000.0,
+      "p90": 2960000.0,
+      "shortfall_prob": 0.14,
+      "committed_outflow": 2200000.0,
+      "expected_inflow": 1250000.0
+    }
+  ],
+  "deployable_cash": 1850000.0,
+  "buffer_required": 2350000.0,
+  "binding_date": "2026-03-31",
+  "binding_reason": "OBL-001 payroll, with RCV-0001 collecting late in the 5th percentile path",
+  "worst_case_min_cash": -180000.0
+}

@@ -1,0 +1,79 @@
+{
+  "as_of": "2026-03-01",
+  "sim_day": 0,
+  "cash_available": 4200000.0,
+  "suppliers": [
+    {
+      "id": "SUP-001",
+      "name": "Meenakshi Steels",
+      "criticality": 0.9,
+      "liquidity_stress": 0.35,
+      "supplier_finance_eligible": true
+    }
+  ],
+  "customers": [
+    {
+      "id": "CUS-004",
+      "name": "Ashwin Motors",
+      "mean_delay_days": 8.0,
+      "std_delay_days": 6.0,
+      "on_time_probability": 0.35,
+      "historical_delays": [3, 12, 0, 21, 7, 9, 14, 2]
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-0001",
+      "supplier_id": "SUP-001",
+      "amount": 850000.0,
+      "issue_date": "2026-02-20",
+      "due_date": "2026-03-22",
+      "discount_pct": 2.0,
+      "discount_until": "2026-03-02",
+      "penalty_bps_per_day": 5.0,
+      "max_delay_days": 15,
+      "status": "OPEN"
+    }
+  ],
+  "receivables": [
+    {
+      "id": "RCV-0001",
+      "customer_id": "CUS-004",
+      "amount": 1250000.0,
+      "expected_date": "2026-03-10",
+      "status": "OPEN"
+    }
+  ],
+  "obligations": [
+    {
+      "id": "OBL-001",
+      "label": "Payroll March",
+      "category": "PAYROLL",
+      "amount": 2200000.0,
+      "due_date": "2026-03-31",
+      "hard": true
+    }
+  ],
+  "facilities": [
+    {
+      "id": "FAC-001",
+      "type": "BANK_LINE",
+      "limit": 5000000.0,
+      "drawn": 0.0,
+      "apr_pct": 13.5,
+      "min_draw": 50000.0,
+      "repayment_days": 60,
+      "eligible_supplier_ids": null
+    },
+    {
+      "id": "FAC-002",
+      "type": "SUPPLIER_FINANCE",
+      "limit": 3000000.0,
+      "drawn": 0.0,
+      "apr_pct": 9.0,
+      "min_draw": 25000.0,
+      "repayment_days": 45,
+      "eligible_supplier_ids": ["SUP-001", "SUP-004", "SUP-011"]
+    }
+  ]
+}
