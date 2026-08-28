@@ -31,16 +31,5 @@
     "materiality_score": 0.08,
     "triggered_reoptimization": false,
     "triggered_decision_id": null
-  },
-  {
-    "event_id": "EVT-0031",
-    "sim_day": 12,
-    "date": "2026-03-13",
-    "type": "RECEIVABLE_DELAYED",
-    "source": "JUDGE_INJECTED",
-    "payload": { "receivable_id": "RCV-0004", "new_expected_date": "2026-04-03", "delay_days": 21 },
-    "materiality_score": 0.42,
-    "triggered_reoptimization": true,
-    "triggered_decision_id": "DEC-000007"
   }
 ]

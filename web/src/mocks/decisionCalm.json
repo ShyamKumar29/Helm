@@ -1,17 +1,17 @@
 {
-  "decision_id": "DEC-000008",
+  "decision_id": "DEC-000007",
   "run_at": "2026-03-13",
   "sim_day": 12,
   "policy": "AGENT",
   "trigger": {
-    "type": "EVENT",
-    "event_id": "EVT-0031",
-    "materiality_score": 0.42,
-    "description": "RCV-0004 expected collection date pushed out by 21 days"
+    "type": "SCHEDULED",
+    "event_id": null,
+    "materiality_score": 0.0,
+    "description": "Routine morning re-plan"
   },
   "cash_before": 4200000.0,
-  "buffer_required": 2350000.0,
-  "deployable_cash": 1850000.0,
+  "buffer_required": 2000000.0,
+  "deployable_cash": 2650000.0,
   "objective_weights": {
     "discount": 1.0,
     "financing_cost": 1.0,
@@ -19,7 +19,7 @@
     "liquidity_risk": 1.5,
     "supplier_stress": 0.8
   },
-  "objective_value": 128400.0,
+  "objective_value": 61800.0,
   "actions": [
     {
       "action_id": "ACT-0001",
@@ -29,31 +29,25 @@
       "action": "PAY_EARLY_DISCOUNT",
       "amount": 833000.0,
       "execute_on": "2026-03-14",
-      "funding_source": "BANK_LINE",
-      "facility_id": "FAC-001",
-      "confidence": 0.86,
+      "funding_source": "CASH",
+      "facility_id": null,
+      "confidence": 0.9,
       "score_breakdown": {
         "discount_captured": 17000.0,
         "penalty_incurred": 0.0,
-        "financing_cost": 4100.0,
-        "liquidity_risk_cost": 1200.0,
+        "financing_cost": 0.0,
+        "liquidity_risk_cost": 0.0,
         "supplier_stress_delta": -0.08,
-        "net_value": 11700.0
+        "net_value": 17000.0
       },
-      "binding_constraints": ["BUFFER_FLOOR"],
-      "primary_reason_code": "CHEAPER_FINANCING",
+      "binding_constraints": [],
+      "primary_reason_code": "DISCOUNT_CAPTURED",
       "rejected_alternatives": [
         {
           "action": "PAY_AT_MATURITY",
           "net_value": 0.0,
-          "delta": -11700.0,
+          "delta": -17000.0,
           "reason_code": "DISCOUNT_FORGONE"
-        },
-        {
-          "action": "PAY_NOW",
-          "net_value": -3400.0,
-          "delta": -15100.0,
-          "reason_code": "BUFFER_BREACH"
         }
       ],
       "status": "PROPOSED"
@@ -63,28 +57,28 @@
       "target_type": "INVOICE",
       "target_id": "INV-0007",
       "supplier_id": "SUP-003",
-      "action": "DELAY",
+      "action": "PAY_NOW",
       "amount": 410000.0,
-      "execute_on": "2026-03-25",
-      "funding_source": "NONE",
+      "execute_on": "2026-03-14",
+      "funding_source": "CASH",
       "facility_id": null,
-      "confidence": 0.74,
+      "confidence": 0.88,
       "score_breakdown": {
         "discount_captured": 0.0,
-        "penalty_incurred": 4200.0,
+        "penalty_incurred": 0.0,
         "financing_cost": 0.0,
         "liquidity_risk_cost": 0.0,
-        "supplier_stress_delta": 0.05,
-        "net_value": -4200.0
+        "supplier_stress_delta": -0.05,
+        "net_value": 0.0
       },
-      "binding_constraints": ["BUFFER_FLOOR"],
-      "primary_reason_code": "BUFFER_BREACH",
+      "binding_constraints": [],
+      "primary_reason_code": "SUPPLIER_CRITICAL",
       "rejected_alternatives": [
         {
-          "action": "PAY_NOW",
-          "net_value": -8600.0,
-          "delta": -4400.0,
-          "reason_code": "BUFFER_BREACH"
+          "action": "DELAY",
+          "net_value": -4200.0,
+          "delta": -4200.0,
+          "reason_code": "PENALTY_ACCEPTED"
         }
       ],
       "status": "PROPOSED"
@@ -121,32 +115,17 @@
       "status": "PROPOSED"
     }
   ],
-  "facility_actions": [
-    {
-      "facility_id": "FAC-001",
-      "action": "DRAW",
-      "amount": 833000.0,
-      "expected_repay_date": "2026-05-13",
-      "interest_cost": 25600.0
-    }
-  ],
+  "facility_actions": [],
   "solver": {
     "method": "MILP_SCENARIO",
     "status": "OPTIMAL",
-    "solve_ms": 740,
+    "solve_ms": 410,
     "n_scenarios": 5,
     "fallback_used": false
   },
   "diff_from_previous": {
-    "previous_decision_id": "DEC-000007",
-    "flipped": [
-      {
-        "target_id": "INV-0007",
-        "from": "PAY_NOW",
-        "to": "DELAY",
-        "reason_code": "BUFFER_BREACH"
-      }
-    ],
+    "previous_decision_id": "DEC-000006",
+    "flipped": [],
     "added": [],
     "removed": []
   },

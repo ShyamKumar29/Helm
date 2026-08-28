@@ -1,0 +1,25 @@
+{
+  "decision_id": "DEC-000007",
+  "headline": "A quiet morning — cash comfortably covers everything due",
+  "narrative": "Nothing forced the agent's hand today. Meenakshi Steels' invoice clears the discount window, so paying now from cash captures the 2% early-payment discount worth ₹17,000 at no financing cost. Velan Logistics is paid on time from cash as well — not because the buffer requires it, but because Velan is a strategic supplier and there's no liquidity reason to delay. Coromandel Packaging's invoice isn't due for another two weeks, so it's held for now rather than paid early into a discount that isn't worth the liquidity it ties up.",
+  "key_assumptions": [
+    "All open receivables are expected to collect on their scheduled dates",
+    "The bank line remains undrawn and available if needed",
+    "No hard obligation is within its risk window yet"
+  ],
+  "tradeoffs": [
+    "Held ₹2,65,000 in cash rather than capturing Coromandel's smaller discount, preserving liquidity for later in the month"
+  ],
+  "would_change_if": [
+    "If a receivable collects late, the buffer requirement rises and today's PAY_NOW calls may flip to DELAY or FINANCE_BANK",
+    "If Coromandel's liquidity stress rises, capturing its discount early becomes worth the tied-up cash"
+  ],
+  "generated_by": "template",
+  "grounded_fields": [
+    "cash_before",
+    "buffer_required",
+    "deployable_cash",
+    "actions[0].score_breakdown",
+    "actions[1].score_breakdown"
+  ]
+}

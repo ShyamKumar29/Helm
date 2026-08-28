@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Bell, ChevronDown, Play, RotateCcw, SkipForward } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import type { AgentStatus } from '../types';
 import { simDate } from '../utils/format';
 import { hoverLift, SPRING, tapPress } from '../utils/motion';
@@ -49,6 +50,35 @@ function StatusPill({ status }: { status: AgentStatus }) {
   );
 }
 
+const NAV_TABS = [
+  { to: '/dashboard', label: 'Live', end: true },
+  { to: '/dashboard/history', label: 'History', end: false },
+  { to: '/dashboard/about', label: 'About', end: false },
+];
+
+function NavTabs() {
+  return (
+    <nav className="flex items-center gap-1 rounded-pill border border-border bg-panel/60 p-1">
+      {NAV_TABS.map((tab) => (
+        <NavLink
+          key={tab.to}
+          to={tab.to}
+          end={tab.end}
+          className={({ isActive }) =>
+            `rounded-pill px-3 py-1 font-mono text-xs transition-colors duration-150 ${
+              isActive
+                ? 'bg-accent font-semibold text-page'
+                : 'text-text-secondary hover:text-text-primary'
+            }`
+          }
+        >
+          {tab.label}
+        </NavLink>
+      ))}
+    </nav>
+  );
+}
+
 function IconButton({ label, children }: { label: string; children: ReactNode }) {
   return (
     <motion.button
@@ -81,6 +111,7 @@ export function Header({ status, simDay, asOf }: HeaderProps) {
         <span className="font-mono text-sm tabular-nums text-text-secondary">
           Day {simDay} · {asOf ? simDate(asOf) : '—'}
         </span>
+        <NavTabs />
       </div>
 
       <div className="flex items-center gap-2">

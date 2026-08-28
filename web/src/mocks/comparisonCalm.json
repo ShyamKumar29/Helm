@@ -1,0 +1,38 @@
+{
+  "sim_day": 12,
+  "as_of": "2026-03-13",
+  "agent": {
+    "discounts_captured": 55000.0,
+    "financing_cost": 6800.0,
+    "penalties_paid": 0.0,
+    "net_working_capital_cost": -48200.0,
+    "shortfall_days": 0,
+    "min_cash_seen": 2400000.0,
+    "obligations_missed": 0,
+    "avg_supplier_stress": 0.28,
+    "decisions_made": 6,
+    "reoptimizations_triggered": 2,
+    "health_score": 82,
+    "savings_per_day": 5820.0
+  },
+  "baseline": {
+    "discounts_captured": 11000.0,
+    "financing_cost": 22400.0,
+    "penalties_paid": 9600.0,
+    "net_working_capital_cost": 21000.0,
+    "shortfall_days": 0,
+    "min_cash_seen": 890000.0,
+    "obligations_missed": 0,
+    "avg_supplier_stress": 0.4,
+    "decisions_made": 11,
+    "reoptimizations_triggered": 0,
+    "health_score": 58,
+    "savings_per_day": -640.0
+  },
+  "delta": {
+    "net_working_capital_cost": -69200.0,
+    "shortfall_days": 0,
+    "obligations_missed": 0,
+    "health_score": 24
+  }
+}

@@ -1,0 +1,924 @@
+{
+  "generated_at": "2026-03-13",
+  "sim_day": 12,
+  "horizon_days": 90,
+  "n_paths": 2000,
+  "risk_alpha": 0.05,
+  "buckets": [
+    {
+      "date": "2026-03-13",
+      "day_offset": 0,
+      "p10": 4447000,
+      "p50": 4597000,
+      "p90": 4672000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-03-14",
+      "day_offset": 1,
+      "p10": 4438000,
+      "p50": 4594000,
+      "p90": 4672000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-15",
+      "day_offset": 2,
+      "p10": 4429000,
+      "p50": 4591000,
+      "p90": 4672000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-16",
+      "day_offset": 3,
+      "p10": 5070000,
+      "p50": 5238000,
+      "p90": 5322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-03-17",
+      "day_offset": 4,
+      "p10": 5061000,
+      "p50": 5235000,
+      "p90": 5322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-18",
+      "day_offset": 5,
+      "p10": 4752000,
+      "p50": 4932000,
+      "p90": 5022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-19",
+      "day_offset": 6,
+      "p10": 4743000,
+      "p50": 4929000,
+      "p90": 5022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-20",
+      "day_offset": 7,
+      "p10": 4734000,
+      "p50": 4926000,
+      "p90": 5022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-21",
+      "day_offset": 8,
+      "p10": 4725000,
+      "p50": 4923000,
+      "p90": 5022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-22",
+      "day_offset": 9,
+      "p10": 4716000,
+      "p50": 4920000,
+      "p90": 5022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-23",
+      "day_offset": 10,
+      "p10": 5057000,
+      "p50": 5267000,
+      "p90": 5372000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-03-24",
+      "day_offset": 11,
+      "p10": 5448000,
+      "p50": 5664000,
+      "p90": 5772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-03-25",
+      "day_offset": 12,
+      "p10": 5439000,
+      "p50": 5661000,
+      "p90": 5772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-26",
+      "day_offset": 13,
+      "p10": 5430000,
+      "p50": 5658000,
+      "p90": 5772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-27",
+      "day_offset": 14,
+      "p10": 5421000,
+      "p50": 5655000,
+      "p90": 5772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-28",
+      "day_offset": 15,
+      "p10": 5112000,
+      "p50": 5352000,
+      "p90": 5472000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-29",
+      "day_offset": 16,
+      "p10": 5103000,
+      "p50": 5349000,
+      "p90": 5472000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-03-30",
+      "day_offset": 17,
+      "p10": 5744000,
+      "p50": 5996000,
+      "p90": 6122000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-03-31",
+      "day_offset": 18,
+      "p10": 4235000,
+      "p50": 4493000,
+      "p90": 4622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 1500000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-01",
+      "day_offset": 19,
+      "p10": 4226000,
+      "p50": 4490000,
+      "p90": 4622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-02",
+      "day_offset": 20,
+      "p10": 3917000,
+      "p50": 4187000,
+      "p90": 4322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-03",
+      "day_offset": 21,
+      "p10": 3908000,
+      "p50": 4184000,
+      "p90": 4322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-04",
+      "day_offset": 22,
+      "p10": 4299000,
+      "p50": 4581000,
+      "p90": 4722000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-04-05",
+      "day_offset": 23,
+      "p10": 4290000,
+      "p50": 4578000,
+      "p90": 4722000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-06",
+      "day_offset": 24,
+      "p10": 4931000,
+      "p50": 5225000,
+      "p90": 5372000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-04-07",
+      "day_offset": 25,
+      "p10": 4622000,
+      "p50": 4922000,
+      "p90": 5072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-08",
+      "day_offset": 26,
+      "p10": 4613000,
+      "p50": 4919000,
+      "p90": 5072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-09",
+      "day_offset": 27,
+      "p10": 4604000,
+      "p50": 4916000,
+      "p90": 5072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-10",
+      "day_offset": 28,
+      "p10": 4595000,
+      "p50": 4913000,
+      "p90": 5072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-11",
+      "day_offset": 29,
+      "p10": 4586000,
+      "p50": 4910000,
+      "p90": 5072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-12",
+      "day_offset": 30,
+      "p10": 4277000,
+      "p50": 4607000,
+      "p90": 4772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-13",
+      "day_offset": 31,
+      "p10": 4918000,
+      "p50": 5254000,
+      "p90": 5422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-04-14",
+      "day_offset": 32,
+      "p10": 4909000,
+      "p50": 5251000,
+      "p90": 5422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-15",
+      "day_offset": 33,
+      "p10": 5300000,
+      "p50": 5648000,
+      "p90": 5822000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-04-16",
+      "day_offset": 34,
+      "p10": 5291000,
+      "p50": 5645000,
+      "p90": 5822000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-17",
+      "day_offset": 35,
+      "p10": 4982000,
+      "p50": 5342000,
+      "p90": 5522000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-18",
+      "day_offset": 36,
+      "p10": 4973000,
+      "p50": 5339000,
+      "p90": 5522000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-19",
+      "day_offset": 37,
+      "p10": 4964000,
+      "p50": 5336000,
+      "p90": 5522000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-20",
+      "day_offset": 38,
+      "p10": 5605000,
+      "p50": 5983000,
+      "p90": 6172000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-04-21",
+      "day_offset": 39,
+      "p10": 5596000,
+      "p50": 5980000,
+      "p90": 6172000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-22",
+      "day_offset": 40,
+      "p10": 5287000,
+      "p50": 5677000,
+      "p90": 5872000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-23",
+      "day_offset": 41,
+      "p10": 5278000,
+      "p50": 5674000,
+      "p90": 5872000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-24",
+      "day_offset": 42,
+      "p10": 5269000,
+      "p50": 5671000,
+      "p90": 5872000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-25",
+      "day_offset": 43,
+      "p10": 5260000,
+      "p50": 5668000,
+      "p90": 5872000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-26",
+      "day_offset": 44,
+      "p10": 5651000,
+      "p50": 6065000,
+      "p90": 6272000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-04-27",
+      "day_offset": 45,
+      "p10": 5992000,
+      "p50": 6412000,
+      "p90": 6622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-04-28",
+      "day_offset": 46,
+      "p10": 5983000,
+      "p50": 6409000,
+      "p90": 6622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-29",
+      "day_offset": 47,
+      "p10": 5974000,
+      "p50": 6406000,
+      "p90": 6622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-04-30",
+      "day_offset": 48,
+      "p10": 5965000,
+      "p50": 6403000,
+      "p90": 6622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-01",
+      "day_offset": 49,
+      "p10": 5956000,
+      "p50": 6400000,
+      "p90": 6622000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-02",
+      "day_offset": 50,
+      "p10": 5647000,
+      "p50": 6097000,
+      "p90": 6322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-03",
+      "day_offset": 51,
+      "p10": 5638000,
+      "p50": 6094000,
+      "p90": 6322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-04",
+      "day_offset": 52,
+      "p10": 6279000,
+      "p50": 6741000,
+      "p90": 6972000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-05-05",
+      "day_offset": 53,
+      "p10": 6270000,
+      "p50": 6738000,
+      "p90": 6972000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-06",
+      "day_offset": 54,
+      "p10": 6261000,
+      "p50": 6735000,
+      "p90": 6972000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-07",
+      "day_offset": 55,
+      "p10": 6352000,
+      "p50": 6832000,
+      "p90": 7072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-05-08",
+      "day_offset": 56,
+      "p10": 6343000,
+      "p50": 6829000,
+      "p90": 7072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-09",
+      "day_offset": 57,
+      "p10": 6334000,
+      "p50": 6826000,
+      "p90": 7072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-10",
+      "day_offset": 58,
+      "p10": 6325000,
+      "p50": 6823000,
+      "p90": 7072000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-11",
+      "day_offset": 59,
+      "p10": 6966000,
+      "p50": 7470000,
+      "p90": 7722000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-05-12",
+      "day_offset": 60,
+      "p10": 6657000,
+      "p50": 7167000,
+      "p90": 7422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-13",
+      "day_offset": 61,
+      "p10": 6648000,
+      "p50": 7164000,
+      "p90": 7422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-14",
+      "day_offset": 62,
+      "p10": 6639000,
+      "p50": 7161000,
+      "p90": 7422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-15",
+      "day_offset": 63,
+      "p10": 6630000,
+      "p50": 7158000,
+      "p90": 7422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-16",
+      "day_offset": 64,
+      "p10": 6621000,
+      "p50": 7155000,
+      "p90": 7422000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-17",
+      "day_offset": 65,
+      "p10": 6312000,
+      "p50": 6852000,
+      "p90": 7122000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-18",
+      "day_offset": 66,
+      "p10": 6953000,
+      "p50": 7499000,
+      "p90": 7772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-05-19",
+      "day_offset": 67,
+      "p10": 6944000,
+      "p50": 7496000,
+      "p90": 7772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-20",
+      "day_offset": 68,
+      "p10": 6935000,
+      "p50": 7493000,
+      "p90": 7772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-21",
+      "day_offset": 69,
+      "p10": 6926000,
+      "p50": 7490000,
+      "p90": 7772000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-22",
+      "day_offset": 70,
+      "p10": 6617000,
+      "p50": 7187000,
+      "p90": 7472000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-23",
+      "day_offset": 71,
+      "p10": 6608000,
+      "p50": 7184000,
+      "p90": 7472000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-24",
+      "day_offset": 72,
+      "p10": 6599000,
+      "p50": 7181000,
+      "p90": 7472000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-25",
+      "day_offset": 73,
+      "p10": 7240000,
+      "p50": 7828000,
+      "p90": 8122000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-05-26",
+      "day_offset": 74,
+      "p10": 7231000,
+      "p50": 7825000,
+      "p90": 8122000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-27",
+      "day_offset": 75,
+      "p10": 6922000,
+      "p50": 7522000,
+      "p90": 7822000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-28",
+      "day_offset": 76,
+      "p10": 6913000,
+      "p50": 7519000,
+      "p90": 7822000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-29",
+      "day_offset": 77,
+      "p10": 7304000,
+      "p50": 7916000,
+      "p90": 8222000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-05-30",
+      "day_offset": 78,
+      "p10": 7295000,
+      "p50": 7913000,
+      "p90": 8222000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-05-31",
+      "day_offset": 79,
+      "p10": 7286000,
+      "p50": 7910000,
+      "p90": 8222000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-01",
+      "day_offset": 80,
+      "p10": 7627000,
+      "p50": 8257000,
+      "p90": 8572000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-06-02",
+      "day_offset": 81,
+      "p10": 7618000,
+      "p50": 8254000,
+      "p90": 8572000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-03",
+      "day_offset": 82,
+      "p10": 7609000,
+      "p50": 8251000,
+      "p90": 8572000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-04",
+      "day_offset": 83,
+      "p10": 7600000,
+      "p50": 8248000,
+      "p90": 8572000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-05",
+      "day_offset": 84,
+      "p10": 7591000,
+      "p50": 8245000,
+      "p90": 8572000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-06",
+      "day_offset": 85,
+      "p10": 7282000,
+      "p50": 7942000,
+      "p90": 8272000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-07",
+      "day_offset": 86,
+      "p10": 7273000,
+      "p50": 7939000,
+      "p90": 8272000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-08",
+      "day_offset": 87,
+      "p10": 7914000,
+      "p50": 8586000,
+      "p90": 8922000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 650000
+    },
+    {
+      "date": "2026-06-09",
+      "day_offset": 88,
+      "p10": 8305000,
+      "p50": 8983000,
+      "p90": 9322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 400000
+    },
+    {
+      "date": "2026-06-10",
+      "day_offset": 89,
+      "p10": 8296000,
+      "p50": 8980000,
+      "p90": 9322000,
+      "shortfall_prob": 0,
+      "committed_outflow": 0,
+      "expected_inflow": 0
+    },
+    {
+      "date": "2026-06-11",
+      "day_offset": 90,
+      "p10": 7987000,
+      "p50": 8677000,
+      "p90": 9022000,
+      "shortfall_prob": 0,
+      "committed_outflow": 300000,
+      "expected_inflow": 0
+    }
+  ],
+  "deployable_cash": 2650000,
+  "buffer_required": 2000000,
+  "binding_date": "2026-03-31",
+  "binding_reason": "OBL-001 payroll, comfortably covered with cash to spare",
+  "worst_case_min_cash": 420000
+}
