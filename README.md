@@ -12,8 +12,17 @@ Built for **CSI ORIGIN 2026** — Problem Statement 4 — by **Team XYRUS**, in 
 
 ---
 
+## Screenshots
+
+| Landing | Live dashboard | Replay |
+|---|---|---|
+| ![Landing page](web/public/landing.png) | ![Live dashboard](web/public/dashboard.png) | ![Replay](web/public/replay.png) |
+
+---
+
 ## Table of contents
 
+- [Screenshots](#screenshots)
 - [What HELM is](#what-helm-is)
 - [Why it's not "a dashboard"](#why-its-not-a-dashboard)
 - [Architecture](#architecture)
