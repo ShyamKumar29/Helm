@@ -169,7 +169,11 @@ export function CashFanChart({ forecast }: CashFanChartProps) {
               x={forecast.binding_date}
               stroke="#F0A93E"
               strokeDasharray="3 3"
-              label={{ value: 'binding', position: 'insideTopRight', fill: '#F0A93E', fontSize: 10 }}
+              // When the binding date is the leftmost visible day (the crunch is "now"),
+              // this line sits right on the plot's left edge — the same spot the Y-axis
+              // tick labels (e.g. "₹6.00 Cr") live. `dx` nudges the label clear of the axis
+              // regardless of where the line lands; harmless everywhere else on the chart.
+              label={{ value: 'binding', position: 'insideTopRight', dx: 6, fill: '#F0A93E', fontSize: 10 }}
             />
             <Area
               dataKey="p10"
